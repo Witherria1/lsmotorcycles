@@ -1,9 +1,5 @@
-/* style.css */
-
-/* Ajouter une image de fond ou une couleur */
 body {
     background: url('https://i.postimg.cc/4xGq05Dx/image.png') no-repeat center center/cover;
-    /* Remplace 'background.jpg' par une image de fond ou utilise 'background-color: #000;' */
     margin: 0;
     font-family: Arial, sans-serif;
     color: rgb(255, 255, 255);
@@ -11,9 +7,8 @@ body {
     background-attachment: fixed;
 }
 
-/* Barre de navigation */
 header {
-    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    background: rgba(0, 0, 0, 0.7);
     padding: 10px 0;
 }
 
@@ -24,7 +19,7 @@ nav {
 }
 
 .logo img {
-    height: 50px; /* Ajuste selon ton logo */
+    height: 50px;
     margin-right: 20px;
 }
 
@@ -41,7 +36,6 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* Texte central */
 main {
     height: 80vh;
     display: flex;
@@ -69,7 +63,7 @@ html, body {
     padding: 0;
 }
 .subtitle img {
-    width: 250px; /* Ajuste la largeur selon tes besoins */
-    height: auto; /* Garde les proportions */
-    margin-top: 10px; /* Ajoute un espace entre le texte et l'image */
+    width: 250px;
+    height: auto;
+    margin-top: 10px;
 }

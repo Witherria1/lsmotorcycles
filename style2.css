@@ -1,6 +1,3 @@
-/* style.css */
-
-/* Même fond que précédemment */
 body {
     background: url('https://i.postimg.cc/4xGq05Dx/image.png') no-repeat center center/cover;
     margin: 0;
@@ -39,7 +36,6 @@ nav ul li a {
     font-size: 18px;
 }
 
-/* Section Catalog */
 .category {
     padding: 30px;
 }
@@ -90,7 +86,6 @@ h2 {
     margin: 5px 0;
 }
 
-/* Styles généraux */
 html, body {
     height: 100%;
     margin: 0;
@@ -104,12 +99,12 @@ html, body {
 .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 270px));
-    gap: 5px; /* Réduit l'espace entre les box */
+    gap: 5px;
     justify-content: center;
-    align-items: start; /* Aligne correctement les box en hauteur */
+    align-items: start;
     padding: 10px;
 }
 .box h2 {
-    font-size: 1em; /* Réduit la taille du nom et du prix */
-    font-weight: bold; /* Conserve le style gras */
+    font-size: 1em;
+    font-weight: bold;
 }
