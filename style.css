@@ -1,0 +1,75 @@
+/* style.css */
+
+/* Ajouter une image de fond ou une couleur */
+body {
+    background: url('https://i.postimg.cc/4xGq05Dx/image.png') no-repeat center center/cover;
+    /* Remplace 'background.jpg' par une image de fond ou utilise 'background-color: #000;' */
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-attachment: fixed;
+}
+
+/* Barre de navigation */
+header {
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent */
+    padding: 10px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img {
+    height: 50px; /* Ajuste selon ton logo */
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+/* Texte central */
+main {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+p {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+.title, .subtitle {
+    font-weight: bold;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+.subtitle img {
+    width: 250px; /* Ajuste la largeur selon tes besoins */
+    height: auto; /* Garde les proportions */
+    margin-top: 10px; /* Ajoute un espace entre le texte et l'image */
+}
