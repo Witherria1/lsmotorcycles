@@ -19,12 +19,37 @@
             </ul>
         </nav>
     </header>
-
+    <div class="catalogue-anchors">
+        <a href="#sport">Sport</a>
+        <a href="#grosse-cylindre">Grosse cylindré</a>
+        <a href="#cross">Cross</a>
+        <a href="#scooter">Scooter</a>
+        <a href="#quad">Quad</a>
+        <a href="#velos">Vélos</a>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Rechercher une moto...">
+        <button onclick="searchMoto()">Rechercher</button>
+    </div>
+    <script>
+        function searchMoto() {
+            const input = document.getElementById('searchInput').value.toLowerCase();
+            const boxes = document.querySelectorAll('.box');
+            boxes.forEach(box => {
+                const title = box.querySelector('h2').textContent.toLowerCase();
+                if (title.includes(input)) {
+                    box.style.display = 'block';
+                } else {
+                    box.style.display = 'none';
+                }
+            });
+        }
+    </script>
     <main>
         <h1 class="title">Catalogue</h1>
 
         <!-- Section Sport -->
-        <section class="category">
+        <section class="category" id="sport">
             <div class="category-title">Sport</div>
 
             <div class="box-container">
@@ -443,7 +468,7 @@
             </div>
         </section>
         <!-- Section Cylindre -->
-        <section class="category">
+        <section class="category" id="grosse-cylindre">
             <div class="category-title">Grosse cylindré</div>
 
 
@@ -774,7 +799,7 @@
             </div>
         </section>
         <!-- Section Cross -->
-        <section class="category">
+        <section class="category" id="cross">
             <div class="category-title">Cross</div>
 
 
@@ -904,7 +929,7 @@
             </div>
         </section>
         <!-- Section Scooter -->
-        <section class="category">
+        <section class="category" id="scooter">
             <div class="category-title">Scooter</div>
 
 
@@ -929,7 +954,7 @@
                     <div class="box-details">
                         <h2>Faggio : 8000$</h2>
                         <p>👤 2</p>
-                        <p>📦 15 Kilos</p>
+                        <p>📦 7 Kilos</p>
                         <div class="ratings">
                             <p>Vitesse max : 3/10</p>
                             <p>Accélération : 2/10</p>
@@ -942,7 +967,7 @@
                 <div class="box">
                     <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
                     <div class="box-details">
-                        <h2>Faggio 2 : 8000$</h2>
+                        <h2>Faggio Livraison : 8000$</h2>
                         <p>👤 ?</p>
                         <p>📦 ? Kilos</p>
                         <div class="ratings">
@@ -971,7 +996,7 @@
             </div>
         </section>
         <!-- Section Quad -->
-        <section class="category">
+        <section class="category" id="quad">
             <div class="category-title">Quad</div>
 
 
@@ -1054,7 +1079,7 @@
             </div>     
         </section>
         <!-- Section Vélos -->
-        <section class="category">
+        <section class="category" id="velos">
             <div class="category-title">Vélos</div>
         
 
