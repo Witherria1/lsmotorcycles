@@ -171,71 +171,63 @@ html, body {
 }
 @media (max-width: 768px) {
     nav {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-    }
-
-    .logo {
-        order: 2;
+        flex-direction: column;
+        gap: 10px;
     }
 
     .logo img {
         height: 40px;
+        margin: 0 auto;
     }
 
-    .category {
-        display: none;
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
     }
 
-    .menu-toggle {
-        display: block;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
+    main {
+        padding: 20px;
+        height: auto;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    p, .box-details, h2 {
+        font-size: 1em;
+    }
+
+    .subtitle img {
+        width: 150px;
+    }
+
+    .box-container {
+        grid-template-columns: 1fr;
         padding: 10px;
-        border-radius: 5px;
-        cursor: pointer;
-        font-size: 18px;
     }
 
-    .menu-toggle:hover {
-        background: rgba(255, 255, 255, 0.7);
-        color: black;
+    .box {
+        width: 90%;
+        margin: 0 auto;
     }
 
-    .category-menu {
-        display: none;
+    .catalogue-anchors {
         position: absolute;
-        top: 50px;
-        left: 10px;
-        background: rgba(0, 0, 0, 0.9);
-        padding: 10px;
-        border-radius: 5px;
-        z-index: 1000;
-    }
-
-    .category-menu a {
-        display: block;
-        color: white;
-        text-decoration: none;
-        padding: 5px 0;
-    }
-
-    .category-menu a:hover {
-        color: black;
-        background: rgba(255, 255, 255, 0.7);
-    }
-
-    .menu-toggle.active + .category-menu {
-        display: block;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: row;
+        gap: 5px;
     }
 
     .search-bar {
         position: absolute;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
+        top: auto;
+        bottom: 10px;
+        right: 10px;
+        left: auto;
         flex-direction: row;
         gap: 5px;
     }
@@ -247,15 +239,5 @@ html, body {
 
     .search-bar button {
         width: auto;
-    }
-
-    .box-container {
-        grid-template-columns: 1fr;
-        padding: 10px;
-    }
-
-    .box {
-        width: 90%;
-        margin: 0 auto;
     }
 }
