@@ -170,15 +170,9 @@ html, body {
     color: black;
 }
 @media (max-width: 768px) {
-    body {
-        text-align: left;
-        padding: 10px;
-    }
-
     nav {
         flex-direction: column;
-        gap: 15px;
-        padding: 10px;
+        gap: 10px;
     }
 
     .logo img {
@@ -188,21 +182,17 @@ html, body {
 
     nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px;
         align-items: center;
     }
 
-    header {
-        padding: 15px;
-    }
-
     main {
-        padding: 15px;
+        padding: 20px;
         height: auto;
     }
 
     h1 {
-        font-size: 1.8em;
+        font-size: 2em;
     }
 
     p, .box-details, h2 {
@@ -210,51 +200,36 @@ html, body {
     }
 
     .subtitle img {
-        width: 120px;
+        width: 150px;
     }
 
     .box-container {
         grid-template-columns: 1fr;
-        gap: 15px;
         padding: 10px;
     }
 
     .box {
-        width: 100%;
+        width: 90%;
         margin: 0 auto;
     }
 
     .catalogue-anchors {
         left: 5px;
-        gap: 8px;
-    }
-
-    .catalogue-anchors a {
-        font-size: 12px;
-        padding: 8px;
+        gap: 5px;
     }
 
     .search-bar {
         top: 5px;
         left: 5px;
         flex-direction: column;
-        gap: 8px;
-        width: 100%;
+        gap: 5px;
     }
 
     .search-bar input[type="text"] {
         width: 100%;
-        font-size: 14px;
     }
 
     .search-bar button {
         width: 100%;
-        font-size: 14px;
-    }
-
-    footer {
-        text-align: center;
-        padding: 10px;
-        font-size: 0.9em;
     }
 }
