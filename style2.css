@@ -230,14 +230,15 @@ html, body {
     }
 
     .search-bar {
-        top: auto;
-        bottom: 10px;
+        position: fixed;
+        top: 10px;
         left: 5px;
         right: 5px;
         flex-direction: row;
         justify-content: space-between;
         gap: 5px;
         width: calc(100% - 10px);
+        z-index: 1000;
     }
 
     .search-bar input[type="text"] {
