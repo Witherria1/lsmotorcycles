@@ -16,35 +16,40 @@
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="Informations.html">Informations</a></li>
                 <li><a href="catalogue.html">Catalogue</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="catalogue-anchors">
-        <a href="#sport">Sport</a>
-        <a href="#grosse-cylindre">Grosse cylindré</a>
-        <a href="#cross">Cross</a>
-        <a href="#scooter">Scooter</a>
-        <a href="#quad">Quad</a>
-        <a href="#velos">Vélos</a>
-    </div>
-    <div class="search-bar">
-        <input type="text" id="searchInput" placeholder="Rechercher une moto...">
-        <button onclick="searchMoto()">Rechercher</button>
-    </div>
-    <script>
-        function searchMoto() {
-            const input = document.getElementById('searchInput').value.toLowerCase();
-            const boxes = document.querySelectorAll('.box');
-            boxes.forEach(box => {
+            </header>
+            <div class="catalogue-anchors">
+                <a href="#sport">Sport</a>
+                <a href="#grosse-cylindre">Grosse cylindré</a>
+                <a href="#cross">Cross</a>
+                <a href="#scooter">Scooter</a>
+                <a href="#quad">Quad</a>
+                <a href="#velos">Vélos</a>
+            </div>
+            <div class="search-bar"></div>
+            <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Rechercher une moto..." onkeypress="handleKeyPress(event)">
+            <button onclick="searchMoto()">Rechercher</button>
+            </div>
+            <script>
+            function searchMoto() {
+                const input = document.getElementById('searchInput').value.toLowerCase();
+                const boxes = document.querySelectorAll('.box');
+                boxes.forEach(box => {
                 const title = box.querySelector('h2').textContent.toLowerCase();
                 if (title.includes(input)) {
                     box.style.display = 'block';
                 } else {
                     box.style.display = 'none';
                 }
-            });
-        }
-    </script>
+                });
+            }
+
+            function handleKeyPress(event) {
+                if (event.key === 'Enter') {
+                searchMoto();
+                }
+            }
+            </script>
     </header>
     <main>
         <h1 class="title">Catalogue</h1>
