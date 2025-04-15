@@ -231,7 +231,7 @@ html, body {
 
     .search-bar {
         position: fixed;
-        top: 10px;
+        top: 50px; /* Adjusted to move the search bar down */
         left: 5px;
         right: 5px;
         flex-direction: row;
