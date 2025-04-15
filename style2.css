@@ -169,6 +169,7 @@ html, body {
     background: rgba(255, 255, 255, 0.7);
     color: black;
 }
+
 @media (max-width: 768px) {
     nav {
         flex-direction: column;
@@ -177,12 +178,12 @@ html, body {
 
     .logo img {
         height: 40px;
-        margin: 10px auto; /* Added margin to slightly lower the logo */
+        margin: 10px auto;
     }
 
     nav ul {
         flex-direction: column;
-        gap: 15px; /* Increased gap to slightly lower page names */
+        gap: 15px;
         align-items: center;
     }
 
@@ -216,20 +217,36 @@ html, body {
     .catalogue-anchors {
         left: 5px;
         gap: 5px;
+        top: auto;
+        bottom: 10px;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .catalogue-anchors a {
+        font-size: 12px;
+        padding: 8px;
     }
 
     .search-bar {
-        top: 5px;
+        top: auto;
+        bottom: 10px;
         left: 5px;
-        flex-direction: column;
+        right: 5px;
+        flex-direction: row;
+        justify-content: space-between;
         gap: 5px;
+        width: calc(100% - 10px);
     }
 
     .search-bar input[type="text"] {
-        width: 100%;
+        flex: 1;
+        width: auto;
     }
 
     .search-bar button {
-        width: 100%;
+        width: auto;
+        padding: 5px 10px;
     }
 }
