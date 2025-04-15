@@ -177,12 +177,12 @@ html, body {
 
     .logo img {
         height: 40px;
-        margin: 0 auto;
+        margin: 10px auto; /* Added margin to slightly lower the logo */
     }
 
     nav ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px; /* Increased gap to slightly lower page names */
         align-items: center;
     }
 
