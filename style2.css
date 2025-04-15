@@ -177,13 +177,13 @@ html, body {
     }
 
     .logo img {
-        height: 40px;
-        margin: 10px auto;
+        height: 30px; /* Reduced height */
+        margin: 15px auto; /* Adjusted margin */
     }
 
     nav ul {
         flex-direction: column;
-        gap: 15px;
+        gap: 10px; /* Reduced gap */
         align-items: center;
     }
 
