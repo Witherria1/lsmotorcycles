@@ -236,30 +236,42 @@ main {
     color: black;
 }
 
-/* ---------- RESPONSIVE DESIGN ---------- */
+/* ---------------- RESPONSIVE CLEAN ---------------- */
 
-/* Smartphones (écrans ≤ 600px) */
+/* Petits écrans (jusqu'à 600px) */
 @media (max-width: 600px) {
+    header {
+        padding: 10px 20px;
+    }
+
     .navbar-container {
         flex-direction: column;
-        align-items: center;
-        width: 90%;
+        width: 100%;
         padding: 0.8rem;
+        gap: 0.8rem;
+    }
+
+    .navbar-logo img {
+        height: 45px;
     }
 
     .navbar-links {
         flex-direction: column;
+        align-items: center;
         gap: 0.5rem;
     }
 
-    .navbar-logo img {
-        height: 50px;
-        margin-bottom: 10px;
+    .navbar-links a,
+    .catalogue-btn {
+        font-size: 1.2rem;
     }
 
     .catalogue-btn {
-        font-size: 1.2rem;
-        padding: 0.4rem 0.8rem;
+        padding: 0.4rem 1rem;
+    }
+
+    .hero {
+        padding: 20px;
     }
 
     .hero-content h1 {
@@ -273,6 +285,7 @@ main {
     .box-container {
         grid-template-columns: 1fr;
         padding: 10px;
+        gap: 15px;
     }
 
     .box {
@@ -280,43 +293,29 @@ main {
         margin: 0 auto;
     }
 
-    .catalogue-anchors {
-        position: static;
-        flex-direction: row;
-        justify-content: center;
-        margin: 20px 0;
-        transform: none;
-    }
-
-    .search-bar {
-        top: auto;
-        bottom: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 8px;
-        width: 90%;
-    }
-
-    .search-bar input[type="text"] {
-        width: 100%;
-    }
-
-    .search-bar button {
-        width: 100%;
-    }
 }
 
-/* Tablettes (écrans ≤ 900px) */
+/* Moyens écrans (jusqu'à 900px) */
 @media (max-width: 900px) {
     .navbar-container {
         width: 90%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navbar-links {
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .catalogue-btn {
+        font-size: 1.3rem;
     }
 
     .box-container {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 10px;
+        padding: 10px;
     }
 
     .box {
@@ -324,15 +323,10 @@ main {
     }
 
     .hero-content h1 {
-        font-size: 2.5rem;
+        font-size: 2.4rem;
     }
 
     .hero-content p {
         font-size: 1.1rem;
-    }
-
-    .search-bar {
-        left: 10px;
-        top: 70px;
     }
 }
