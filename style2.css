@@ -47,7 +47,8 @@ header {
 }
 
 .navbar-logo img {
-    height: 60px;
+    height: auto;
+    max-height: 60px; /* Limite la hauteur du logo */
     flex-shrink: 0;
 }
 
@@ -80,7 +81,6 @@ header {
     flex-shrink: 0;
 }
 
-
 .category {
     padding: 30px;
 }
@@ -94,9 +94,12 @@ header {
     margin-bottom: 30px;
     margin-top: 100px;
 }
+
 .box {
     background-color: white;
-    width: 250px;
+    width: 100%;
+    max-width: 250px; /* Limite la taille des boxes */
+    height: auto;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgb(0, 0, 0);
@@ -109,8 +112,8 @@ header {
 
 .box img {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
+    height: auto; /* Maintient le ratio d'aspect */
+    object-fit: cover; /* Remplir l'espace sans déformation */
 }
 
 .box-details {
@@ -140,9 +143,10 @@ html, body {
 }
 
 .subtitle img {
-    width: 200px;
+    width: 100%; /* Les images de la sous-titre s'adaptent à l'écran */
     height: auto;
 }
+
 .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 270px));
@@ -151,10 +155,12 @@ html, body {
     align-items: start;
     padding: 10px;
 }
+
 .box h2 {
     font-size: 1em;
     font-weight: bold;
 }
+
 .burger-menu {
     display: none;
     font-size: 2.2rem;
@@ -169,7 +175,7 @@ html, body {
 /* CACHE LA SIDEBAR PAR DÉFAUT (PC) */
 .sidebar {
     display: none;
-  }
+}
 
 .sidebar input[type="text"], .sidebar button {
     padding: 10px;
