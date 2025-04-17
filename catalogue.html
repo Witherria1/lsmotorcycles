@@ -8,52 +8,23 @@
 </head>
 <body>
     <header>
-        <nav>
-            <div class="logo">
+        <div class="navbar-container">
+            <div class="navbar-logo">
                 <img src="https://i.postimg.cc/Dyc8J2Kf/logo.png" alt="LS Motorcycles Logo">
             </div>
-            <ul>
-                <li><a href="index.html">Accueil</a></li>
-                <li><a href="Informations.html">Informations</a></li>
-                <li><a href="catalogue.html">Catalogue</a></li>
-            </header>
-            <div class="catalogue-anchors">
-                <a href="#sport">Sport</a>
-                <a href="#grosse-cylindre">Grosse cylindré</a>
-                <a href="#cross">Cross</a>
-                <a href="#scooter">Scooter</a>
-                <a href="#quad">Quad</a>
-                <a href="#velos">Vélos</a>
-            </div>
-            <div class="search-bar"></div>
-            <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Rechercher une moto..." onkeypress="handleKeyPress(event)">
-            <button onclick="searchMoto()">Rechercher</button>
-            </div>
-            <script>
-            function searchMoto() {
-                const input = document.getElementById('searchInput').value.toLowerCase();
-                const boxes = document.querySelectorAll('.box');
-                boxes.forEach(box => {
-                const title = box.querySelector('h2').textContent.toLowerCase();
-                if (title.includes(input)) {
-                    box.style.display = 'block';
-                } else {
-                    box.style.display = 'none';
-                }
-                });
-            }
 
-            function handleKeyPress(event) {
-                if (event.key === 'Enter') {
-                searchMoto();
-                }
-            }
-            </script>
+            <!-- Bouton menu burger (mobile uniquement) -->
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+
+            <!-- Liens de navigation (menu déroulant sur mobile) -->
+            <nav class="navbar-links mobile-nav">
+                <a href="index.html">🏘️ Accueil</a>
+                <a href="Informations.html">❓ Informations</a>
+                <a href="catalogue.html" class="catalogue-btn">🏍️ Catalogue</a>
+            </nav>
+        </div>
     </header>
     <main>
-        <h1 class="title">Catalogue</h1>
-
         <!-- Section Sport -->
         <section class="category" id="sport">
             <div class="category-title">Sport</div>
@@ -1261,5 +1232,11 @@
             </div>
         </section>
     </main>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.mobile-nav');
+            nav.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>
