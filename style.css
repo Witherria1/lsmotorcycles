@@ -387,7 +387,7 @@ main {
   
     /* Bouton Catalogue dans le menu */
     .catalogue-btn {
-      background-color: rgb(255, 255, 255);
+      background-color: rgb(255, 132, 0);
       color: rgb(0, 0, 0);
       font-size: 1.3rem;
       margin-top: 10px;
