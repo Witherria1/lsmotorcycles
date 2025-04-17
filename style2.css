@@ -6,6 +6,7 @@ body {
     text-align: center;
     background-attachment: fixed;
 }
+
 /* RESET DE BASE */
 * {
     margin: 0;
@@ -165,14 +166,38 @@ html, body {
     z-index: 2001;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
-    .burger-menu {
-        display: block;
-    }
+/* CACHE LA SIDEBAR PAR DÉFAUT (PC) */
+.sidebar {
+    display: none;
+  }
 
+.sidebar input[type="text"], .sidebar button {
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin: 5px;
+    border: none;
+}
+
+.sidebar input[type="text"] {
+    width: 150px;
+}
+
+.sidebar button {
+    background-color: #ff8800;
+    color: white;
+    cursor: pointer;
+}
+
+.sidebar button:hover {
+    background-color: #e57700;
+}
+
+/* RESPONSIVE - MOBILE */
+@media (max-width: 768px) {
+    /* Sidebar centrée entre le logo et le menu déroulant */
     .navbar-container {
-        flex-direction: row;
+        display: flex;
         justify-content: space-between;
         align-items: center;
         position: fixed;
@@ -181,6 +206,48 @@ html, body {
         padding: 0.8rem 20px;
         background: rgba(0, 0, 0, 0.6);
         z-index: 2000;
+    }
+
+    .navbar-logo {
+        flex-shrink: 0; /* Pour empêcher le logo de se réduire */
+    }
+
+    /* SIDEBAR ENTRE LE LOGO ET LE MENU (MOBILE) */
+    .sidebar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 999; /* Assure-toi qu'elle soit au-dessus des autres éléments */
+        gap: 5px;
+    }
+
+    .sidebar input[type="text"],
+    .sidebar button {
+        padding: 8px;
+        font-size: 0.9rem;
+        border-radius: 5px;
+        border: none;
+    }
+
+    .sidebar input[type="text"] {
+        width: 140px;
+    }
+
+    .sidebar button {
+        background-color: #ff8800;
+        color: white;
+        cursor: pointer;
+    }
+
+    .sidebar button:hover {
+        background-color: #e57700;
+    }
+
+    .burger-menu {
+        display: block;
     }
 
     .navbar-links {
@@ -217,6 +284,7 @@ html, body {
         padding: 10px;
         text-align: center;
     }
+
     main {
         padding: 20px;
         height: auto;

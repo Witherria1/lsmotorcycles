@@ -22,6 +22,30 @@
                 <a href="Informations.html">❓ Informations</a>
                 <a href="catalogue.html" class="catalogue-btn">🏍️ Catalogue</a>
             </nav>
+
+            <div class="sidebar">
+                <input type="text" id="searchInput" placeholder="Rechercher une moto..." onkeypress="handleKeyPress(event)">
+                </div>
+                <script>
+                function searchMoto() {
+                    const input = document.getElementById('searchInput').value.toLowerCase();
+                    const boxes = document.querySelectorAll('.box');
+                    boxes.forEach(box => {
+                    const title = box.querySelector('h2').textContent.toLowerCase();
+                    if (title.includes(input)) {
+                        box.style.display = 'block';
+                    } else {
+                        box.style.display = 'none';
+                    }
+                    });
+                }
+    
+                function handleKeyPress(event) {
+                    if (event.key === 'Enter') {
+                    searchMoto();
+                    }
+                }
+            </script>
         </div>
     </header>
     <main>
