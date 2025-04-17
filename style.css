@@ -1,4 +1,4 @@
-/* Reset de base */
+/* RESET DE BASE */
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +7,6 @@
 
 html, body {
     height: 100%;
-    margin: 0;
-    padding: 0;
     font-family: Arial, sans-serif;
     color: white;
     background: url('https://i.postimg.cc/4xGq05Dx/image.png') no-repeat center center/cover;
@@ -16,7 +14,7 @@ html, body {
     text-align: center;
 }
 
-/* HEADER */
+/* HEADER NAVIGATION */
 header {
     position: absolute;
     top: 0;
@@ -25,6 +23,7 @@ header {
     background: rgba(0, 0, 0, 0.6);
     display: flex;
     justify-content: center;
+    z-index: 1000;
 }
 
 .navbar-container {
@@ -66,21 +65,19 @@ header {
     background-color: #ff8800;
     padding: 0.5rem 1rem;
     border-radius: 8px;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
+    color: black;
     font-weight: bold;
     font-size: 1.5rem;
     white-space: nowrap;
     flex-shrink: 0;
 }
 
-/* SECTION HERO */
+/* HERO SECTION */
 .hero {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
     flex-direction: column;
     padding: 0 20px;
 }
@@ -96,7 +93,7 @@ header {
     font-weight: bold;
 }
 
-/* TITRES ET TEXTES */
+/* TITRES & TEXTES */
 h1 {
     font-size: 3em;
 }
@@ -132,7 +129,7 @@ main {
     align-items: center;
 }
 
-/* BOX / CATALOGUE CARDS */
+/* CATALOGUE / BOX */
 .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 270px));
@@ -172,48 +169,34 @@ main {
     font-weight: bold;
 }
 
-
-/* ======== MENU BURGER MOBILE ======== */
-
+/* BURGER MENU */
 .burger-menu {
     display: none;
     font-size: 2.2rem;
     cursor: pointer;
     color: white;
-    z-index: 2001;
     position: absolute;
     top: 20px;
     right: 30px;
+    z-index: 2001;
 }
 
-/* Menu déroulant sur mobile */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .burger-menu {
         display: block;
     }
 
-    /* Centrage + espacement */
     .navbar-container {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
-        justify-content: center;
-        position: relative;
-        top: 20px; /* ✅ Décalage vers le bas */
+        position: fixed;
+        top: 20px;
         width: 100%;
-        padding: 1rem;
-        gap: 1rem;
-    }
-
-    .navbar-logo {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .burger-menu {
-        position: relative;
-        align-self: flex-end;
-        margin-right: 20px;
+        padding: 0.8rem 20px;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 2000;
     }
 
     .navbar-links {
@@ -221,13 +204,13 @@ main {
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0.95);
         position: absolute;
-        top: 80px;
+        top: 70px;
         right: 20px;
         width: 230px;
         border-radius: 10px;
         padding: 15px;
         text-align: left;
-        z-index: 2000;
+        z-index: 1999;
     }
 
     .navbar-links.show {
@@ -237,9 +220,6 @@ main {
     .navbar-links a {
         padding: 10px 15px;
         font-size: 1.3rem;
-        color: white;
-        text-align: left;
-        text-decoration: none;
         border-radius: 5px;
     }
 
@@ -248,89 +228,9 @@ main {
     }
 
     .catalogue-btn {
-        background-color: #ff8800;
-        color: rgb(0, 0, 0);
         font-size: 1.3rem;
         margin-top: 10px;
         padding: 10px;
-        border-radius: 8px;
         text-align: center;
     }
 }
-
-@media (max-width: 768px) {
-    /* Affiche le burger */
-    .burger-menu {
-      display: block;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 2.2rem;
-      cursor: pointer;
-      color: white;
-      z-index: 2001;
-    }
-  
-    /* Navbar en ligne : logo à gauche, burger à droite */
-    .navbar-container {
-      flex-direction: row;            /* row pour logo + burger */
-      justify-content: space-between; /* espace entre les deux */
-      align-items: center;
-      position: fixed;
-      top: 20px;                      /* légèrement descendue */
-      width: 100%;
-      padding: 0.8rem 20px;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 2000;
-    }
-  
-    /* Logo à gauche */
-    .navbar-logo {
-      display: flex;
-      align-items: center;
-    }
-  
-    /* Menu déroulant caché par défaut */
-    .navbar-links {
-      display: none;
-      flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.95);
-      position: absolute;
-      top: 70px;     /* juste en-dessous de la navbar */
-      right: 20px;
-      width: 230px;
-      border-radius: 10px;
-      padding: 15px;
-      text-align: left;
-      z-index: 1999;
-    }
-  
-    /* On voit le menu quand on clique */
-    .navbar-links.show {
-      display: flex;
-    }
-  
-    /* Liens du menu */
-    .navbar-links a {
-      padding: 10px 15px;
-      font-size: 1.3rem;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-  
-    .navbar-links a:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-    }
-  
-    /* Bouton Catalogue dans le menu */
-    .catalogue-btn {
-      background-color: #ff8800;
-      color: rgb(0, 0, 0);
-      font-size: 1.3rem;
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 8px;
-      text-align: center;
-    }
-  }
