@@ -318,7 +318,8 @@ main {
         border-radius: 8px;
         text-align: center;
     }
-}@media (max-width: 768px) {
+}
+@media (max-width: 768px) {
     .burger-menu {
         display: block;
     }
