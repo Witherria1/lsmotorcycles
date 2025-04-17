@@ -63,7 +63,7 @@ header {
 }
 
 .catalogue-btn {
-    background-color: rgb(255, 255, 255);
+    background-color: #ff8800;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     color: rgb(0, 0, 0);
@@ -172,69 +172,7 @@ main {
     font-weight: bold;
 }
 
-/* AUTRES ÉLÉMENTS */
-.catalogue-anchors {
-    position: fixed;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 1000;
-}
 
-.catalogue-anchors a {
-    text-decoration: none;
-    color: white;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 14px;
-    text-align: center;
-    transition: background 0.3s ease;
-}
-
-.catalogue-anchors a:hover {
-    background: rgba(255, 255, 255, 0.7);
-    color: black;
-}
-
-.search-bar {
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 10px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.search-bar input[type="text"] {
-    border: none;
-    padding: 5px;
-    border-radius: 3px;
-    outline: none;
-    font-size: 14px;
-}
-
-.search-bar button {
-    background: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background 0.3s ease;
-}
-
-.search-bar button:hover {
-    background: rgba(255, 255, 255, 0.7);
-    color: black;
-}
 /* ======== MENU BURGER MOBILE ======== */
 
 .burger-menu {
@@ -310,7 +248,7 @@ main {
     }
 
     .catalogue-btn {
-        background-color: rgb(255, 132, 0);
+        background-color: #ff8800;
         color: rgb(0, 0, 0);
         font-size: 1.3rem;
         margin-top: 10px;
@@ -387,7 +325,7 @@ main {
   
     /* Bouton Catalogue dans le menu */
     .catalogue-btn {
-      background-color: rgb(255, 132, 0);
+      background-color: #ff8800;
       color: rgb(0, 0, 0);
       font-size: 1.3rem;
       margin-top: 10px;
