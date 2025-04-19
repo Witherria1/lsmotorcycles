@@ -41,7 +41,7 @@ header {
     width: 65%;
     max-width: 700px;
     padding: 0.6rem 1.2rem;
-    background-color: #47010199;
+    background-color: #454444;
     border-radius: 12px;
     gap: 1rem;
 }
@@ -255,7 +255,7 @@ html, body {
         top: 20px;
         width: 100%;
         padding: 0.8rem 20px;
-        background: #47010199;
+        background: #454444;
         z-index: 2000;
     }
 
@@ -368,7 +368,7 @@ html, body {
         gap: 15px;
         padding: 15px;
         width: 90%;
-        position: fixed; /* Use fixed to ensure it stays centered */
+        position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
