@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cylindre - LS Motorcycles</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="https://i.postimg.cc/0jDtsG1c/logoLS.jpg" alt="LS Motorcycles Logo">
+            </div>
+
+            <!-- Bouton menu burger (mobile uniquement) -->
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+
+            <!-- Liens de navigation (menu déroulant sur mobile) -->
+            <nav class="navbar-links mobile-nav">
+                <a href="index.html">🏘️ Accueil</a>
+                <a href="Informations.html">❓ Informations</a>
+                <a href="catalogue.html" class="catalogue-btn">🏍️ Catalogue</a>
+            </nav>
+
+            <div class="sidebar">
+                <input type="text" id="searchInput" placeholder="Rechercher une moto..." onkeypress="handleKeyPress(event)">
+                </div>
+                <script>
+                function searchMoto() {
+                    const input = document.getElementById('searchInput').value.toLowerCase();
+                    const boxes = document.querySelectorAll('.box');
+                    boxes.forEach(box => {
+                    const title = box.querySelector('h2').textContent.toLowerCase();
+                    if (title.includes(input)) {
+                        box.style.display = 'block';
+                    } else {
+                        box.style.display = 'none';
+                    }
+                    });
+                }
+    
+                function handleKeyPress(event) {
+                    if (event.key === 'Enter') {
+                    searchMoto();
+                    }
+                }
+            </script>
+        </div>
+    </header>
+    <main>
+        <!-- Section Cylindre -->
+        <section class="category" id="grosse-cylindre">
+            <div class="category-title">Grosse cylindré</div>
+
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/dQBjhGQk/cylindre1.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Rat Bike : 7000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 4/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 4/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/s270q1YY/cylindre2.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Zombie Chopper : 21 932$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 8/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/wBqm8GJw/cylindre3.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>LP Chopper : 22 832$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 5/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/tCjbRZRM/cylindre4.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Sovereign : 24 422$</h2>
+                        <p>👤 1</p>
+                        <p>📦 35 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/QxhLG20L/cylindre5.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Hexer : 32 106$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/DfQDgCFx/cylindre6.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Wolfsbane : 35 744$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 4/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>RK 2019 : 37 562$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 8/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/LXpDgpq2/cylindre8.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Innovation : 38 956$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/xdxHnVK6/cylindre12.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Daemon Stickers : 39 528$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 6/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/RVLWvzmw/cylindre11.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Zombie Bobber : 40 316$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 8/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/4dpJwzNp/cylindre10.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Daemon : 40 528$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 6/10</p>
+                            <p>Suspension : 10/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/76r4CfMh/cylindre9.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Nightblade : 40 572$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/8kt8Gy3j/cylindre13.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Bagger : 42 190$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 4/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 4/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/RVyDC2TV/cylindre14.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Krust : 50 352$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 6/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/tTvzSVSC/cylindre15.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>LP Bagger : 53 521$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/fLyc9Rz4/cylindre16.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Sanctus : 56 332$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 8/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/66DPtDc6/cylindre17.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Chimera : 58 250$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 8/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>B-2A Spirit Stealth Bomber : 69 852$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/KYq9VV42/cylindre18.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Gargoyle : 70 722$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/sgf4rckD/cylindre19.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Cliffhanger : 78 272$/h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/59wBQT12/cylindre20.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Avarus : 78 528$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.mobile-nav');
+            nav.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

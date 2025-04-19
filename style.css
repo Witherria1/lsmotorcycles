@@ -32,7 +32,7 @@ header {
     width: 65%;
     max-width: 700px;
     padding: 0.6rem 1.2rem;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #47010199;
     border-radius: 12px;
     gap: 1rem;
 }
@@ -194,7 +194,7 @@ main {
         top: 20px;
         width: 100%;
         padding: 0.8rem 20px;
-        background: rgba(0, 0, 0, 0.6);
+        background: #47010199;
         z-index: 2000;
     }
 

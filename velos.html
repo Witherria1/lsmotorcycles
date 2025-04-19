@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vélos - LS Motorcycles</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="https://i.postimg.cc/0jDtsG1c/logoLS.jpg" alt="LS Motorcycles Logo">
+            </div>
+
+            <!-- Bouton menu burger (mobile uniquement) -->
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+
+            <!-- Liens de navigation (menu déroulant sur mobile) -->
+            <nav class="navbar-links mobile-nav">
+                <a href="index.html">🏘️ Accueil</a>
+                <a href="Informations.html">❓ Informations</a>
+                <a href="catalogue.html" class="catalogue-btn">🏍️ Catalogue</a>
+            </nav>
+
+            <div class="sidebar">
+                <input type="text" id="searchInput" placeholder="Rechercher une moto..." onkeypress="handleKeyPress(event)">
+                </div>
+                <script>
+                function searchMoto() {
+                    const input = document.getElementById('searchInput').value.toLowerCase();
+                    const boxes = document.querySelectorAll('.box');
+                    boxes.forEach(box => {
+                    const title = box.querySelector('h2').textContent.toLowerCase();
+                    if (title.includes(input)) {
+                        box.style.display = 'block';
+                    } else {
+                        box.style.display = 'none';
+                    }
+                    });
+                }
+    
+                function handleKeyPress(event) {
+                    if (event.key === 'Enter') {
+                    searchMoto();
+                    }
+                }
+            </script>
+        </div>
+    </header>
+    <main>
+        <!-- Section Vélos -->
+        <section class="category" id="velos">
+            <div class="category-title">Vélos</div>
+        
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/cCcCdPjD/velo1.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Fixter : 300$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 2/10</p>
+                            <p>Accélération : 3/10</p>
+                            <p>Frein : 4/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Lowrider Bicyle : 300$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 2/10</p>
+                            <p>Accélération : 3/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <img src="https://i.postimg.cc/dtqD5tkg/velo3.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Cruiser : 700$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 2/10</p>
+                            <p>Accélération : 2/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 4/10</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <img src="https://i.postimg.cc/Vkh6sqGc/velo4.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>BMX : 1000$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 2/10</p>
+                            <p>Accélération : 3/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Endurex : 1046$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : ?/10</p>
+                            <p>Accélération : ?/10</p>
+                            <p>Frein : ?/10</p>
+                            <p>Suspension : ?/10</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Whippet : 1046$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : ?/10</p>
+                            <p>Accélération : ?/10</p>
+                            <p>Frein : ?/10</p>
+                            <p>Suspension : ?/10</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <img src="https://i.postimg.cc/k4vqSKcG/velo8.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Tri-Cycles : 1050$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 3/10</p>
+                            <p>Accélération : 3/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <img src="https://i.postimg.cc/xjP1NDx5/velo5.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Scorcher : 1150$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 2/10</p>
+                            <p>Accélération : 3/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/sgGzctct/velo9.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>BIMX : 1510$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 2/10</p>
+                            <p>Accélération : 3/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Inducator : 2500$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : ?/10</p>
+                            <p>Accélération : ?/10</p>
+                            <p>Frein : ?/10</p>
+                            <p>Suspension : ?/10</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Inducator Junk ERG : 2500$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : ?/10</p>
+                            <p>Accélération : ?/10</p>
+                            <p>Frein : ?/10</p>
+                            <p>Suspension : ?/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.mobile-nav');
+            nav.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

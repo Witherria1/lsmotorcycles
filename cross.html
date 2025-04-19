@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross - LS Motorcycles</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="https://i.postimg.cc/0jDtsG1c/logoLS.jpg" alt="LS Motorcycles Logo">
+            </div>
+
+            <!-- Bouton menu burger (mobile uniquement) -->
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+
+            <!-- Liens de navigation (menu déroulant sur mobile) -->
+            <nav class="navbar-links mobile-nav">
+                <a href="index.html">🏘️ Accueil</a>
+                <a href="Informations.html">❓ Informations</a>
+                <a href="catalogue.html" class="catalogue-btn">🏍️ Catalogue</a>
+            </nav>
+
+            <div class="sidebar">
+                <input type="text" id="searchInput" placeholder="Rechercher une moto..." onkeypress="handleKeyPress(event)">
+                </div>
+                <script>
+                function searchMoto() {
+                    const input = document.getElementById('searchInput').value.toLowerCase();
+                    const boxes = document.querySelectorAll('.box');
+                    boxes.forEach(box => {
+                    const title = box.querySelector('h2').textContent.toLowerCase();
+                    if (title.includes(input)) {
+                        box.style.display = 'block';
+                    } else {
+                        box.style.display = 'none';
+                    }
+                    });
+                }
+    
+                function handleKeyPress(event) {
+                    if (event.key === 'Enter') {
+                    searchMoto();
+                    }
+                }
+            </script>
+        </div>
+    </header>
+    <main>
+        <!-- Section Cross -->
+        <section class="category" id="cross">
+            <div class="category-title">Cross</div>
+
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Enduro : 25 000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : ?/10</p>
+                            <p>Accélération : ?/10</p>
+                            <p>Frein : ?/10</p>
+                            <p>Suspension : ?/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/Gh26MLH2/cross1.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Sanchez : 25 000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 8/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/JhcTrvGv/cross2.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Sanchez Stickers : 26 000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 8/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>FMX : 33 000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 8/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/T1ZjqJKn/cross4.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Manchez : 69 040$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 8/10</p>
+                            <p>Frein : 8/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/xTvgyBPC/cross6.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>BF 400 : 73 600$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/L6LQQJmm/cross5.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Manchez Scout 75 000$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 8/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/NMQQF3bH/cross7.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Manchez Scout C 90 000$</h2>
+                        <p>👤 1</p>
+                        <p>📦 10 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 8/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.mobile-nav');
+            nav.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sport - LS Motorcycles</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <header>
+        <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="https://i.postimg.cc/0jDtsG1c/logoLS.jpg" alt="LS Motorcycles Logo">
+            </div>
+
+            <!-- Bouton menu burger (mobile uniquement) -->
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+
+            <!-- Liens de navigation (menu déroulant sur mobile) -->
+            <nav class="navbar-links mobile-nav">
+                <a href="index.html">🏘️ Accueil</a>
+                <a href="Informations.html">❓ Informations</a>
+                <a href="catalogue.html" class="catalogue-btn">🏍️ Catalogue</a>
+            </nav>
+
+            <div class="sidebar">
+                <input type="text" id="searchInput" placeholder="Rechercher une moto..." onkeypress="handleKeyPress(event)">
+                </div>
+                <script>
+                function searchMoto() {
+                    const input = document.getElementById('searchInput').value.toLowerCase();
+                    const boxes = document.querySelectorAll('.box');
+                    boxes.forEach(box => {
+                    const title = box.querySelector('h2').textContent.toLowerCase();
+                    if (title.includes(input)) {
+                        box.style.display = 'block';
+                    } else {
+                        box.style.display = 'none';
+                    }
+                    });
+                }
+    
+                function handleKeyPress(event) {
+                    if (event.key === 'Enter') {
+                    searchMoto();
+                    }
+                }
+            </script>
+        </div>
+    </header>
+    <main>
+        <!-- Section Sport -->
+        <section class="category" id="sport">
+            <div class="category-title">Sport</div>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/FHLNh22h/sport1.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Vader : 24 286$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/66mkTMVq/sport2.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Thrust : 29 956$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/8zh9KD2f/sport3.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Ruffian : 30 956$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/zvg85vgB/sport4.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>PCJ 600 : 35 850$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/Dzfh18Sw/sport5.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Akuma : 37 000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 8/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/wj28xgw8/sport6.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Esskey : 39 050$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/YqxyY8YQ/sport10.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Double-T : 40 286$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/tCGLhYfG/sport7.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Diabolus : 40 956$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/0Nj38m6D/sport8.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Defiler : 42 188$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 8/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/vTr2PtjF/sport9.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Vortex : 42 902$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 8/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/3RptRZ34/sport11.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>FCR 1000 : 45 200$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/jSFc415n/sport12.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Reever : 46 642$</h2>
+                        <p>👤 1</p>
+                        <p>📦 20 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/mDQSR2S7/sport13.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Hakuchou : 50 782$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Kunoichi : 51 000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/hvDVB8vq/sport16.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Diabulus Custom : 51 022$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Bati 701 : 53 000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/VLsFQw0b/sport14.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>FCR 1000 CUSTOM : 55 500$</h2>
+                        <p>👤 1</p>
+                        <p>📦 5 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="https://i.postimg.cc/Fsn3MLQ2/sport18.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Hakuchou Drag : 59 016$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 7/10</p>
+                            <p>Accélération : 9/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 7/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/g03hLt6W/sport19.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Bati 801 : 62 000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Kusa : 62 000$/h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>XP1 : 67 500$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/fTFS2Qcs/sport21.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Bati 801 RR : 68 166$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Powersurge : 71 000$</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 10/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Shinobi : 74 982$</h2>
+                        <p>👤 1</p>
+                        <p>📦 100 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 7/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Nemesis : 84 468$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Bati 901 : 85 000$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 6/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box">
+                    <img src="https://i.postimg.cc/k5NVgVkM/sport26.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Carbon RS : 120 444$</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.mobile-nav');
+            nav.classList.toggle('show');
+        }
+    </script>
+</body>
+</html>

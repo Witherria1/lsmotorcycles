@@ -41,7 +41,7 @@ header {
     width: 65%;
     max-width: 700px;
     padding: 0.6rem 1.2rem;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: #47010199;
     border-radius: 12px;
     gap: 1rem;
 }
@@ -198,7 +198,52 @@ html, body {
 .sidebar button:hover {
     background-color: #e57700;
 }
+.category-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6); /* Add a subtle background for better visibility */
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Add a soft shadow */
+}
 
+.category-buttons button {
+    background: linear-gradient(45deg, #ff8800, #e57700); /* Add a gradient */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    width: 220px; /* Slightly wider for better aesthetics */
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+}
+
+.category-buttons button:hover {
+    background: linear-gradient(45deg, #e57700, #ff8800); /* Reverse gradient on hover */
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
+}
+
+.category-buttons button:active {
+    transform: scale(0.95);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+}
+
+.category-buttons button:focus {
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+}
 /* RESPONSIVE - MOBILE */
 @media (max-width: 768px) {
     /* Sidebar centrée entre le logo et le menu déroulant */
@@ -210,7 +255,7 @@ html, body {
         top: 20px;
         width: 100%;
         padding: 0.8rem 20px;
-        background: rgba(0, 0, 0, 0.6);
+        background: #47010199;
         z-index: 2000;
     }
 
@@ -316,5 +361,21 @@ html, body {
     .box {
         width: 90%;
         margin: 0 auto;
+    }
+    .category-buttons {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+        width: 90%;
+        position: static;
+        transform: none;
+        margin: 20px auto;
+        box-shadow: none;
+    }
+
+    .category-buttons button {
+        width: 100%;
+        font-size: 1.1rem;
+        padding: 10px 20px;
     }
 }
