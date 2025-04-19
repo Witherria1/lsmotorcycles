@@ -71,7 +71,7 @@ header {
 }
 
 .catalogue-btn {
-    background-color: #ff8800;
+    background-color: #ff0000;
     padding: 0.5rem 1rem;
     border-radius: 8px;
     color: black;
@@ -163,13 +163,19 @@ html, body {
 
 .burger-menu {
     display: none;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     cursor: pointer;
     color: white;
     position: absolute;
     top: 20px;
     right: 30px;
     z-index: 2001;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.burger-menu:hover {
+    transform: scale(1.2);
+    color: #ff0000;
 }
 
 /* CACHE LA SIDEBAR PAR DÉFAUT (PC) */
@@ -190,13 +196,13 @@ html, body {
 }
 
 .sidebar button {
-    background-color: #ff8800;
+    background-color: #ff0000;
     color: white;
     cursor: pointer;
 }
 
 .sidebar button:hover {
-    background-color: #e57700;
+    background-color: darkred;
 }
 .category-buttons {
     display: flex;
@@ -215,7 +221,7 @@ html, body {
 }
 
 .category-buttons button {
-    background: linear-gradient(45deg, #ff8800, #e57700); /* Add a gradient */
+    background: linear-gradient(45deg, red, darkred); /* Add a red gradient */
     color: white;
     border: none;
     padding: 12px 25px;
@@ -230,7 +236,7 @@ html, body {
 }
 
 .category-buttons button:hover {
-    background: linear-gradient(45deg, #e57700, #ff8800); /* Reverse gradient on hover */
+    background: linear-gradient(45deg, #8e4a00, #eec698); /* Reverse gradient on hover */
     transform: scale(1.1);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhance shadow on hover */
 }
@@ -304,14 +310,14 @@ html, body {
     .navbar-links {
         display: none;
         flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.95);
+        background-color: rgba(34, 34, 34, 0.95);
         position: absolute;
-        top: 70px;
-        right: 20px;
-        width: 230px;
-        border-radius: 10px;
-        padding: 15px;
-        text-align: left;
+        top: 100%; /* Adjusted to place it below the navbar */
+        left: 0;
+        width: 100%;
+        border-radius: 0;
+        padding: 20px 0;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         z-index: 1999;
     }
 
@@ -320,13 +326,18 @@ html, body {
     }
 
     .navbar-links a {
-        padding: 10px 15px;
-        font-size: 1.3rem;
-        border-radius: 5px;
+        padding: 12px 20px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: white;
+        border-radius: 0;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        text-align: center;
     }
 
     .navbar-links a:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(0, 0, 0, 0.8);
+        transform: translateX(5px);
     }
 
     .catalogue-btn {
