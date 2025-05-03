@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acceuil - LS Motorcycles</title>
+    <title>Accueil - LS Motorcycles</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="navbar-container">
             <div class="navbar-logo">
-                <img src="https://i.postimg.cc/0jDtsG1c/logoLS.jpg" alt="LS Motorcycles Logo">
+                <img src="https://i.postimg.cc/0jDtsG1c/logoLS.jpg" alt="Logo LS Motorcycles">
             </div>
 
             <!-- Bouton menu burger (mobile uniquement) -->
-            <div class="burger-menu" onclick="toggleMenu()">☰</div>
+            <button class="burger-menu" aria-label="Ouvrir le menu" onclick="toggleMenu()">☰</button>
 
             <!-- Liens de navigation (menu déroulant sur mobile) -->
-            <nav class="navbar-links mobile-nav">
+            <nav class="navbar-links mobile-nav" aria-label="Navigation principale">
                 <a href="index.html">🏘️ Accueil</a>
-                <a href="Informations.html">❓ Informations</a>
+                <a href="Informations.html">❓Informations</a>
+                <a href="location.html">💎 Locations</a>
                 <a href="catalogue.html" class="catalogue-btn">🏍️ Catalogue</a>
             </nav>
         </div>

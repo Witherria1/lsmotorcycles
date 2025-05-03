@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quad - LS Motorcycles</title>
+    <title>Cross - LS Motorcycles</title>
     <link rel="stylesheet" href="style2.css">
 </head>
 <body>
@@ -23,73 +23,19 @@
                 <a href="location.html">💎 Locations</a>
                 <a href="catalogue.html" class="catalogue-btn">🏍️ Catalogue</a>
             </nav>
-
-            <div class="sidebar">
-                <input type="text" id="searchInput" placeholder="Rechercher une moto..." onkeypress="handleKeyPress(event)">
-                </div>
-                <script>
-                function searchMoto() {
-                    const input = document.getElementById('searchInput').value.toLowerCase();
-                    const boxes = document.querySelectorAll('.box');
-                    boxes.forEach(box => {
-                    const title = box.querySelector('h2').textContent.toLowerCase();
-                    if (title.includes(input)) {
-                        box.style.display = 'block';
-                    } else {
-                        box.style.display = 'none';
-                    }
-                    });
-                }
-    
-                function handleKeyPress(event) {
-                    if (event.key === 'Enter') {
-                    searchMoto();
-                    }
-                }
-            </script>
         </div>
     </header>
     <main>
-        <!-- Section Quad -->
-        <section class="category" id="quad">
-            <div class="category-title">Quad</div>
+        <!-- Section Location -->
+        <section class="category" id="Location">
+            <div class="category-title">Locations</div>
 
 
             <div class="box-container">
                 <div class="box">
-                    <img src="https://i.postimg.cc/MK1zS0y4/quad1.png" alt="Moto Sport">
-                    <div class="box-details">
-                        <h2>Blazer : 10 000$</h2>
-                        <p>👤 1</p>
-                        <p>📦 0 Kilos</p>
-                        <div class="ratings">
-                            <p>Vitesse max : 4/10</p>
-                            <p>Accélération : 4/10</p>
-                            <p>Frein : 10/10</p>
-                            <p>Suspension : 6/10</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box">
-                    <img src="https://i.postimg.cc/YC2ZsQ8Q/quad2.png" alt="Moto Sport">
-                    <div class="box-details">
-                        <h2>Hot Rod Blazer : 19 000$</h2>
-                        <p>👤 1</p>
-                        <p>📦 0 Kilos</p>
-                        <div class="ratings">
-                            <p>Vitesse max : 4/10</p>
-                            <p>Accélération : 4/10</p>
-                            <p>Frein : 10/10</p>
-                            <p>Suspension : 6/10</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box">
                     <img src="https://i.postimg.cc/sDsNM5kb/quad3.png" alt="Moto Sport">
                     <div class="box-details">
-                        <h2>Blazer Street : 20 000$</h2>
+                        <h2>Blazer Street : 300$/j</h2>
                         <p>👤 1</p>
                         <p>📦 0 Kilos</p>
                         <div class="ratings">
@@ -100,11 +46,10 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="box">
                     <img src="https://i.postimg.cc/k50jqSN1/quad4.png" alt="Moto Sport">
                     <div class="box-details">
-                        <h2>Verus : 22 000$</h2>
+                        <h2>Verus : 400$/j</h2>
                         <p>👤 2</p>
                         <p>📦 0 Kilos</p>
                         <div class="ratings">
@@ -115,23 +60,35 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="box-container">
                 <div class="box">
-                    <img src="https://i.postimg.cc/nrZ0QtPq/quad5.png" alt="Moto Sport">
+                    <img src="https://i.postimg.cc/xdxHnVK6/cylindre12.png" alt="Moto Sport">
                     <div class="box-details">
-                        <h2>Stryder : 90 000$</h2>
+                        <h2>Daemon : 800$/j</h2>
                         <p>👤 2</p>
                         <p>📦 0 Kilos</p>
                         <div class="ratings">
                             <p>Vitesse max : 5/10</p>
-                            <p>Accélération : 7/10</p>
-                            <p>Frein : 10/10</p>
-                            <p>Suspension : 6/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 6/10</p>
+                            <p>Suspension : 5/10</p>
                         </div>
                     </div>
-                </div>    
-            </div>     
+                </div>
+                <div class="box">
+                    <img src="https://i.postimg.cc/ZYyVw4hj/cylindre10.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Nightblade : 800$/j</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <script>
