@@ -5,6 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Locations - LS Motorcycles</title>
     <link rel="stylesheet" href="style2.css">
+
+    <script>
+        const availabilityURL = "https://script.google.com/macros/s/AKfycby0J_elbKLnfVG82Nrp-Bc3jbd-mO44Lg2ePPwsWjrBHGqB9kAJSkMyY2OZEGxaQTc6/exec"; // 🔁 Remplace par l'URL de ton script Apps Script
+    
+        async function updateAvailability() {
+            // Étape 1 : Ajouter "⏳ Chargement..." sous chaque nom de véhicule
+            document.querySelectorAll(".box-details h2").forEach(el => {
+                const loading = document.createElement("p");
+                loading.textContent = "⏳ Chargement...";
+                loading.classList.add("loading-status");
+                loading.style.fontWeight = "bold";
+                el.insertAdjacentElement("afterend", loading);
+            });
+    
+            // Étape 2 : Récupérer les disponibilités depuis Google Sheets
+            try {
+                const response = await fetch(availabilityURL);
+                const data = await response.json();
+    
+                data.forEach(entry => {
+                    const elements = document.querySelectorAll(".box-details h2");
+                    elements.forEach(el => {
+                        if (el.textContent.includes(entry.name)) {
+                            // Supprime l'ancien indicateur de chargement
+                            const loadingEl = el.parentNode.querySelector(".loading-status");
+                            if (loadingEl) loadingEl.remove();
+    
+                            // Ajoute la vraie disponibilité
+                            const availabilityLine = document.createElement("p");
+                            availabilityLine.textContent = entry.available ? "✅ Disponible" : "❌ Non disponible";
+                            availabilityLine.style.fontWeight = "bold";
+                            el.insertAdjacentElement("afterend", availabilityLine);
+                        }
+                    });
+                });
+            } catch (error) {
+                console.error("Erreur de récupération des disponibilités :", error);
+                // En cas d’erreur, affiche un message d'erreur
+                document.querySelectorAll(".loading-status").forEach(el => {
+                    el.textContent = "⚠️ Erreur de chargement";
+                    el.style.color = "red";
+                });
+            }
+        }
+    
+        document.addEventListener("DOMContentLoaded", updateAvailability);
+    </script>
+    
 </head>
 <body>
     <header>
