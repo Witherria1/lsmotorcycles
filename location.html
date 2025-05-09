@@ -3,38 +3,177 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Locations - Riverside</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Locations - LS Motorcycles</title>
+    <link rel="stylesheet" href="style2.css">
+
+    <script>
+        const availabilityURL = "https://script.google.com/macros/s/AKfycby0J_elbKLnfVG82Nrp-Bc3jbd-mO44Lg2ePPwsWjrBHGqB9kAJSkMyY2OZEGxaQTc6/exec"; // 🔁 Remplace par l'URL de ton script Apps Script
+    
+        async function updateAvailability() {
+            // Étape 1 : Ajouter "⏳ Chargement..." sous chaque nom de véhicule
+            document.querySelectorAll(".box-details h2").forEach(el => {
+                const loading = document.createElement("p");
+                loading.textContent = "⏳ Chargement...";
+                loading.classList.add("loading-status");
+                loading.style.fontWeight = "bold";
+                el.insertAdjacentElement("afterend", loading);
+            });
+    
+            // Étape 2 : Récupérer les disponibilités depuis Google Sheets
+            try {
+                const response = await fetch(availabilityURL);
+                const data = await response.json();
+    
+                data.forEach(entry => {
+                    const elements = document.querySelectorAll(".box-details h2");
+                    elements.forEach(el => {
+                        if (el.textContent.includes(entry.name)) {
+                            // Supprime l'ancien indicateur de chargement
+                            const loadingEl = el.parentNode.querySelector(".loading-status");
+                            if (loadingEl) loadingEl.remove();
+    
+                            // Ajoute la vraie disponibilité
+                            const availabilityLine = document.createElement("p");
+                            availabilityLine.textContent = entry.available ? "✅ Disponible" : "❌ Non disponible";
+                            availabilityLine.style.fontWeight = "bold";
+                            el.insertAdjacentElement("afterend", availabilityLine);
+                        }
+                    });
+                });
+            } catch (error) {
+                console.error("Erreur de récupération des disponibilités :", error);
+                // En cas d’erreur, affiche un message d'erreur
+                document.querySelectorAll(".loading-status").forEach(el => {
+                    el.textContent = "⚠️ Erreur de chargement";
+                    el.style.color = "red";
+                });
+            }
+        }
+    
+        document.addEventListener("DOMContentLoaded", updateAvailability);
+    </script>
+    
 </head>
 <body>
     <header>
         <div class="navbar-container">
+            <div class="navbar-logo">
+                <img src="https://i.postimg.cc/0jDtsG1c/logoLS.jpg" alt="LS Motorcycles Logo">
+            </div>
 
             <!-- Bouton menu burger (mobile uniquement) -->
-            <button class="burger-menu" aria-label="Ouvrir le menu" onclick="toggleMenu()">☰</button>
+            <div class="burger-menu" onclick="toggleMenu()">☰</div>
 
             <!-- Liens de navigation (menu déroulant sur mobile) -->
-            <nav class="navbar-links mobile-nav" aria-label="Navigation principale">
-                <a href="index.html">🏘️Accueil</a>
+            <nav class="navbar-links mobile-nav">
+                <a href="index.html">🏘️ Accueil</a>
+                <a href="Informations.html">❓Informations</a>
+                <a href="location.html">💎 Locations</a>
+                <a href="catalogue.html" class="catalogue-btn">🏍️ Catalogue</a>
             </nav>
         </div>
     </header>
-    <!-- Script pour ouvrir/fermer le menu mobile -->
+    <main>
+        <!-- Section Location -->
+        <section class="category" id="Location">
+            <div class="category-title">Locations</div>
+
+
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/MK1zS0y4/quad1.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2> Blazer : 200$/j</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 4/10</p>
+                            <p>Accélération : 4/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="https://i.postimg.cc/sDsNM5kb/quad3.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Blazer Street : 300$/j</h2>
+                        <p>👤 1</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 7/10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="https://i.postimg.cc/k50jqSN1/quad4.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Verus : 400$/j</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 4/10</p>
+                            <p>Accélération : 3/10</p>
+                            <p>Frein : 3/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="https://i.postimg.cc/xdxHnVK6/cylindre12.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Daemon : 800$/j</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 5/10</p>
+                            <p>Accélération : 5/10</p>
+                            <p>Frein : 6/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box-container">
+                <div class="box">
+                    <img src="https://i.postimg.cc/ZYyVw4hj/cylindre10.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Nightblade : 800$/j</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 5/10</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <img src="https://i.postimg.cc/g03hLt6W/sport19.png" alt="Moto Sport">
+                    <div class="box-details">
+                        <h2>Bati 801 : 1200$/j</h2>
+                        <p>👤 2</p>
+                        <p>📦 0 Kilos</p>
+                        <div class="ratings">
+                            <p>Vitesse max : 6/10</p>
+                            <p>Accélération : 7/10</p>
+                            <p>Frein : 10/10</p>
+                            <p>Suspension : 6/10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <script>
         function toggleMenu() {
             const nav = document.querySelector('.mobile-nav');
             nav.classList.toggle('show');
         }
     </script>
-    <section class="reservation-form">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSevt5dhzn2L7nyyNTcVjr3lw5_fqTgyC3H9X2QNj2kcsXjSyQ/viewform?usp=dialog" 
-                width="100%" 
-                height="1000" 
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0">
-            Chargement…
-        </iframe>
-    </section></section>
 </body>
 </html>
