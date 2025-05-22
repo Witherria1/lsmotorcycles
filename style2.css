@@ -112,8 +112,9 @@ header {
 
 .box img {
     width: 100%;
-    height: auto; /* Maintient le ratio d'aspect */
+    height: 180px; /* Hauteur fixe pour toutes les images */
     object-fit: cover; /* Remplir l'espace sans déformation */
+    display: block;
 }
 
 .box-details {
