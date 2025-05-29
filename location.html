@@ -7,51 +7,47 @@
     <link rel="stylesheet" href="style2.css">
 
     <script>
-        const availabilityURL = "https://script.google.com/macros/s/AKfycby0J_elbKLnfVG82Nrp-Bc3jbd-mO44Lg2ePPwsWjrBHGqB9kAJSkMyY2OZEGxaQTc6/exec"; // 🔁 Remplace par l'URL de ton script Apps Script
-    
-        async function updateAvailability() {
-            // Étape 1 : Ajouter "⏳ Chargement..." sous chaque nom de véhicule
-            document.querySelectorAll(".box-details h2").forEach(el => {
-                const loading = document.createElement("p");
-                loading.textContent = "⏳ Chargement...";
-                loading.classList.add("loading-status");
-                loading.style.fontWeight = "bold";
-                el.insertAdjacentElement("afterend", loading);
+const availabilityURL = "https://script.google.com/macros/s/AKfycby0J_elbKLnfVG82Nrp-Bc3jbd-mO44Lg2ePPwsWjrBHGqB9kAJSkMyY2OZEGxaQTc6/exec";
+
+async function updateAvailability() {
+    document.querySelectorAll(".box-details h2").forEach(el => {
+        const loading = document.createElement("p");
+        loading.textContent = "⏳ Chargement...";
+        loading.classList.add("loading-status");
+        loading.style.fontWeight = "bold";
+        el.insertAdjacentElement("afterend", loading);
+    });
+
+    try {
+        const response = await fetch(availabilityURL);
+        const data = await response.json();
+
+        data.forEach(entry => {
+            const elements = document.querySelectorAll(".box-details h2");
+            elements.forEach(el => {
+                if (el.textContent.includes(entry.name)) {
+                    const loadingEl = el.parentNode.querySelector(".loading-status");
+                    if (loadingEl) loadingEl.remove();
+
+                    const availabilityLine = document.createElement("p");
+                    availabilityLine.textContent = `Disponible ${entry.available}/${entry.total}`;
+                    availabilityLine.style.fontWeight = "bold";
+                    el.insertAdjacentElement("afterend", availabilityLine);
+                }
             });
-    
-            // Étape 2 : Récupérer les disponibilités depuis Google Sheets
-            try {
-                const response = await fetch(availabilityURL);
-                const data = await response.json();
-    
-                data.forEach(entry => {
-                    const elements = document.querySelectorAll(".box-details h2");
-                    elements.forEach(el => {
-                        if (el.textContent.includes(entry.name)) {
-                            // Supprime l'ancien indicateur de chargement
-                            const loadingEl = el.parentNode.querySelector(".loading-status");
-                            if (loadingEl) loadingEl.remove();
-    
-                            // Ajoute la vraie disponibilité
-                            const availabilityLine = document.createElement("p");
-                            availabilityLine.textContent = entry.available ? "✅ Disponible" : "❌ Non disponible";
-                            availabilityLine.style.fontWeight = "bold";
-                            el.insertAdjacentElement("afterend", availabilityLine);
-                        }
-                    });
-                });
-            } catch (error) {
-                console.error("Erreur de récupération des disponibilités :", error);
-                // En cas d’erreur, affiche un message d'erreur
-                document.querySelectorAll(".loading-status").forEach(el => {
-                    el.textContent = "⚠️ Erreur de chargement";
-                    el.style.color = "red";
-                });
-            }
-        }
-    
-        document.addEventListener("DOMContentLoaded", updateAvailability);
-    </script>
+        });
+    } catch (error) {
+        console.error("Erreur de récupération des disponibilités :", error);
+        document.querySelectorAll(".loading-status").forEach(el => {
+            el.textContent = "⚠️ Erreur de chargement";
+            el.style.color = "red";
+        });
+    }
+}
+
+document.addEventListener("DOMContentLoaded", updateAvailability);
+</script>
+
     
 </head>
 <body>
@@ -227,7 +223,7 @@
                 <div class="box">
                     <img src="https://i.postimg.cc/7LfHKjKB/image.png" alt="Moto Sport">
                     <div class="box-details">
-                        <h2>FMX Blanche: 600$/j</h2>
+                        <h2>FMX: 600$/j</h2>
                         <p>👤 2</p>
                         <p>📦 0 Kilos</p>
                         <div class="ratings">
@@ -238,22 +234,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="box">
-                    <img src="https://i.postimg.cc/9XYTKsN6/image.png" alt="Moto Sport">
-                    <div class="box-details">
-                        <h2>FMX Orange: 600$/j</h2>
-                        <p>👤 2</p>
-                        <p>📦 0 Kilos</p>
-                        <div class="ratings">
-                            <p>Vitesse max : 5/10</p>
-                            <p>Accélération : 5/10</p>
-                            <p>Frein : 8/10</p>
-                            <p>Suspension : 5/10</p>
-                        </div>
-                    </div>
-                </div>
-             </div>
-             <div class="box-container">
                 <div class="box">
                     <img src="https://i.postimg.cc/kXYQ4vmR/rk.png" alt="Moto Sport">
                     <div class="box-details">
@@ -268,6 +248,8 @@
                         </div>
                     </div>
                 </div>
+             </div>
+             <div class="box-container">
                 <div class="box">
                     <img src="https://i.postimg.cc/ZYyVw4hj/cylindre10.png" alt="Moto Sport">
                     <div class="box-details">
@@ -310,9 +292,7 @@
                         </div>
                     </div>
                 </div>
-             </div>
-            <div class="box-container">
-             <div class="box">
+                <div class="box">
                     <img src="https://i.postimg.cc/fb7ffHy2/Shinobi.png" alt="Moto Sport">
                     <div class="box-details">
                         <h2>Shinobi : 1400$/j</h2>
@@ -326,6 +306,8 @@
                         </div>
                     </div>
                 </div>
+             </div>
+            <div class="box-container">
                 <div class="box">
                     <img src="https://i.postimg.cc/sgf4rckD/cylindre19.png" alt="Moto Sport">
                     <div class="box-details">
