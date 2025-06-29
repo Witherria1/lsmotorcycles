@@ -18,7 +18,7 @@ async function updateAvailability() {
         el.insertAdjacentElement("afterend", loading);
     });
 
-    try {
+        try {
         const response = await fetch(availabilityURL);
         const data = await response.json();
 
@@ -66,7 +66,6 @@ document.addEventListener("DOMContentLoaded", updateAvailability);
                 <a href="Informations.html">❓Informations</a>
                 <a href="location.html">💎Locations</a>
                 <a href="occasion.html">💲Occasions</a>
-                <a href="permi.html">📓RDV Permi</a>
                 <a href="catalogue.html" class="catalogue-btn">🏍️Catalogue</a>
             </nav>
         </div>
