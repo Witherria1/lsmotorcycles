@@ -181,7 +181,10 @@ html, body {
 
 /* CACHE LA SIDEBAR PAR DÉFAUT (PC) */
 .sidebar {
-    display: none;
+    display: flex; /* Garde-la visible sur desktop */
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 .sidebar input[type="text"], .sidebar button {
@@ -253,138 +256,136 @@ html, body {
 }
 /* RESPONSIVE - MOBILE */
 @media (max-width: 768px) {
-    /* Sidebar centrée entre le logo et le menu déroulant */
+    /* Navbar réorganisée pour le mobile */
     .navbar-container {
         display: flex;
+        flex-wrap: wrap; /* Permet aux éléments de passer à la ligne */
         justify-content: space-between;
         align-items: center;
         position: fixed;
-        top: 20px;
+        top: 0; /* Aligné en haut de la page */
         width: 100%;
-        padding: 0.8rem 20px;
+        padding: 15px 20px; /* Espacement ajusté */
         background: #454444;
+        border-radius: 0; /* Pas de bordures arrondies sur mobile */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Légère ombre pour la navbar */
         z-index: 2000;
     }
 
     .navbar-logo {
-        flex-shrink: 0; /* Pour empêcher le logo de se réduire */
+        flex-shrink: 0;
+        order: 1; /* Place le logo en premier */
     }
 
-    /* SIDEBAR ENTRE LE LOGO ET LE MENU (MOBILE) */
+    /* Masque la sidebar sur mobile */
     .sidebar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 999; /* Assure-toi qu'elle soit au-dessus des autres éléments */
-        gap: 5px;
-    }
-
-    .sidebar input[type="text"],
-    .sidebar button {
-        padding: 8px;
-        font-size: 0.9rem;
-        border-radius: 5px;
-        border: none;
-    }
-
-    .sidebar input[type="text"] {
-        width: 140px;
-    }
-
-    .sidebar button {
-        background-color: #ff8800;
-        color: white;
-        cursor: pointer;
-    }
-
-    .sidebar button:hover {
-        background-color: #e57700;
+        display: none;
     }
 
     .burger-menu {
         display: block;
+        order: 2; /* Place le bouton burger après le logo */
     }
 
     .navbar-links {
         display: none;
         flex-direction: column;
-        background-color: rgba(34, 34, 34, 0.95);
+        background-color: rgba(34, 34, 34, 0.98); /* Fond plus opaque pour le menu */
         position: absolute;
-        top: 100%; /* Adjusted to place it below the navbar */
+        top: 100%; /* Juste en dessous de la navbar */
         left: 0;
         width: 100%;
         border-radius: 0;
-        padding: 20px 0;
+        padding: 10px 0; /* Moins de padding */
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
         z-index: 1999;
+        transition: transform 0.3s ease-out; /* Ajoute une transition pour l'ouverture/fermeture */
+        transform: translateY(-100%); /* Masqué par défaut */
     }
 
     .navbar-links.show {
         display: flex;
+        transform: translateY(0); /* Apparaît en glissant */
     }
 
     .navbar-links a {
-        padding: 12px 20px;
-        font-size: 1.4rem;
-        font-weight: 600;
+        padding: 15px 20px; /* Plus d'espace pour les liens */
+        font-size: 1.2rem; /* Taille de police légèrement plus petite */
+        font-weight: 500; /* Moins gras */
         color: white;
-        border-radius: 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Ligne de séparation subtile */
         transition: background-color 0.3s ease, transform 0.2s ease;
         text-align: center;
     }
 
+    .navbar-links a:last-child {
+        border-bottom: none; /* Pas de ligne sur le dernier élément */
+    }
+
     .navbar-links a:hover {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.6); /* Changement de couleur au survol plus doux */
         transform: translateX(5px);
     }
 
     .catalogue-btn {
-        font-size: 1.3rem;
-        margin-top: 10px;
-        padding: 10px;
+        font-size: 1.2rem; /* Taille de police ajustée */
+        margin-top: 15px; /* Plus d'espace au-dessus */
+        padding: 10px 20px;
         text-align: center;
+        width: 80%; /* Occupe plus de largeur */
+        margin-left: auto;
+        margin-right: auto;
+        display: block; /* Pour centrer le bouton */
     }
 
     main {
-        padding: 20px;
-        height: auto;
+        padding-top: 100px; /* S'assure que le contenu ne soit pas caché sous la navbar fixe */
+        padding-bottom: 20px; /* Un peu de padding en bas */
     }
 
-    h1 {
-        font-size: 2em;
-    }
-
-    p, .box-details, h2 {
-        font-size: 1em;
-    }
-
-    .subtitle img {
-        width: 150px;
+    .category-title {
+        font-size: 2em; /* Taille légèrement réduite */
+        margin-top: 30px; /* Moins de marge supérieure */
+        margin-bottom: 20px;
+        padding: 8px 15px; /* Padding ajusté */
     }
 
     .box-container {
-        grid-template-columns: 1fr;
-        padding: 10px;
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        gap: 20px; /* Plus d'espace entre les boîtes */
+        padding: 0 15px; /* Padding latéral pour centrer les boîtes */
     }
 
     .box {
-        width: 90%;
-        margin: 0 auto;
+        width: 100%; /* Occupe toute la largeur disponible dans le container */
+        max-width: 300px; /* Ajoute une max-width pour éviter que les boîtes soient trop larges sur de grands mobiles */
+        margin: 0 auto; /* Centre les boîtes */
     }
+
+    .box img {
+        height: 150px; /* Hauteur des images légèrement réduite */
+    }
+
+    .box-details {
+        padding: 10px; /* Padding réduit */
+    }
+
+    h2 {
+        font-size: 1.3em; /* Taille de police ajustée */
+    }
+
+    .ratings p {
+        font-size: 0.9em; /* Taille de police plus petite pour les notes */
+    }
+
+    /* Style pour les boutons de catégorie (si utilisés ailleurs) */
     .category-buttons {
-        display: flex;
-        flex-direction: column;
         gap: 15px;
         padding: 15px;
         width: 90%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: 0;
+        position: static; /* Retire le positionnement absolu pour le mobile */
+        transform: none; /* Retire la transformation */
+        margin: 20px auto; /* Centre les boutons avec marge */
         box-shadow: none;
     }
 
@@ -392,5 +393,43 @@ html, body {
         width: 100%;
         font-size: 1.1rem;
         padding: 10px 20px;
+    }
+}
+
+/* RESPONSIVE - TABLETTE (entre 769px et 1024px, par exemple) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .navbar-container {
+        width: 90%; /* Occupe plus de largeur sur tablette */
+        padding: 0.8rem 1.5rem;
+    }
+
+    .navbar-links a {
+        font-size: 1.2rem; /* Taille de police ajustée */
+    }
+
+    .catalogue-btn {
+        font-size: 1.2rem;
+    }
+
+    .sidebar {
+        display: flex; /* Toujours afficher la sidebar sur tablette */
+        gap: 8px;
+    }
+
+    .sidebar input[type="text"] {
+        width: 120px; /* Taille de la barre de recherche ajustée */
+    }
+
+    .category-title {
+        font-size: 2.2em;
+    }
+
+    .box-container {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 2 ou 3 colonnes sur tablette */
+        gap: 15px;
+    }
+
+    .box {
+        max-width: none; /* Laisse le grid gérer la largeur */
     }
 }
