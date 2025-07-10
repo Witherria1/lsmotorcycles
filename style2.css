@@ -151,8 +151,8 @@ html, body {
 .box-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 270px));
-    gap: 5px;
-    justify-content: center;
+    gap: 25px; /* Augmenté pour un meilleur espacement */
+    justify-content: center; /* Centre les éléments de la grille horizontalement */
     align-items: start;
     padding: 10px;
 }
@@ -208,6 +208,7 @@ html, body {
 .sidebar button:hover {
     background-color: darkred;
 }
+
 .category-buttons {
     display: flex;
     flex-direction: column;
@@ -254,6 +255,33 @@ html, body {
     outline: 3px solid #ffffff;
     outline-offset: 3px;
 }
+
+/* CSS pour le bouton d'actualisation spécifique à occasion.html */
+#refreshOccasionsButton {
+    display: none; /* Caché par défaut sur mobile */
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #ff0000; /* Couleur assortie à ton thème */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#refreshOccasionsButton:hover {
+    background-color: darkred;
+    transform: translateY(-2px);
+}
+
+#refreshOccasionsButton:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
 /* RESPONSIVE - MOBILE */
 @media (max-width: 768px) {
     /* Navbar réorganisée pour le mobile */
@@ -425,11 +453,28 @@ html, body {
     }
 
     .box-container {
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 2 ou 3 colonnes sur tablette */
-        gap: 15px;
+        /* Ici, tu peux avoir 2 ou 3 colonnes, selon la largeur de la tablette */
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+        gap: 20px; /* Ajuste le gap aussi pour les tablettes */
+        max-width: 90%; /* Limite la largeur du conteneur sur tablette si besoin */
+        margin: 0 auto; /* Centre sur tablette */
     }
 
     .box {
         max-width: none; /* Laisse le grid gérer la largeur */
+    }
+}
+
+/* RESPONSIVE - PC (plus de 1024px) */
+@media (min-width: 1025px) { /* S'applique aux écrans de PC */
+    #refreshOccasionsButton {
+        display: block; /* Affiche le bouton sur PC */
+    }
+
+    .box-container {
+        grid-template-columns: repeat(4, 1fr); /* Force 4 colonnes de largeur égale */
+        max-width: 1200px; /* Limite la largeur maximale du conteneur des motos */
+        margin: 0 auto; /* Centre le conteneur horizontalement sur la page */
+        padding: 20px; /* Ajoute un peu de padding intérieur */
     }
 }

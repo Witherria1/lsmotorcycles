@@ -5,6 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Occasion - LS Motorcycles</title>
     <link rel="stylesheet" href="style2.css">
+    <style>
+        /* CSS additionnel pour le bouton d'actualisation */
+        #refreshOccasionsButton {
+            display: none; /* Caché par défaut sur mobile */
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #ff0000; /* Couleur assortie à ton thème */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #refreshOccasionsButton:hover {
+            background-color: darkred;
+            transform: translateY(-2px);
+        }
+
+        #refreshOccasionsButton:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Afficher le bouton sur les écrans PC (plus larges que 768px) */
+        @media (min-width: 769px) {
+            #refreshOccasionsButton {
+                display: block; /* Affiche le bouton sur PC */
+            }
+        }
+
+        /* Nouvelle règle pour forcer 4 colonnes sur les grands écrans (PC) */
+        @media (min-width: 1025px) { /* Commence à s'appliquer après la tablette */
+            .box-container {
+                /* Force 4 colonnes de taille égale, occupant l'espace disponible */
+                grid-template-columns: repeat(4, 1fr); 
+                max-width: 1200px; /* Optionnel: Limite la largeur maximale du conteneur pour un meilleur rendu */
+                margin: 0 auto; /* Centre le conteneur */
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -13,10 +57,8 @@
                 <img src="https://i.postimg.cc/0jDtsG1c/logoLS.jpg" alt="LS Motorcycles Logo">
             </div>
 
-            <!-- Bouton menu burger (mobile uniquement) -->
             <div class="burger-menu" onclick="toggleMenu()">☰</div>
 
-            <!-- Liens de navigation (menu déroulant sur mobile) -->
             <nav class="navbar-links mobile-nav">
                 <a href="index.html">🏘️Accueil</a>
                 <a href="Informations.html">❓Informations</a>
@@ -24,97 +66,133 @@
                 <a href="occasion.html">💲Occasions</a>
                 <a href="catalogue.html" class="catalogue-btn">🏍️Catalogue</a>
             </nav>
+        </div>
     </header>
     <main>
-        <!-- Section Quad -->
-        <section class="category" id="quad">
+        <section class="category" id="occasions-section">
             <div class="category-title">Occasions</div>
+            
+            <button id="refreshOccasionsButton">Actualiser les données</button>
 
-
-            <div class="box-container">
-                <div class="box">
-                    <img src="https://i.postimg.cc/s270q1YY/cylindre2.png" alt="Moto Sport">
-                    <div class="box-details">
-                        <h2>Zombie Chopper : 17 000$</h2>
-                        <h6>prix neuf : 21 932$</h6>
-                        <p>👤 2</p>
-                        <p>📦 0 Kilos</p>
-                        <div class="ratings">
-                            <p>Vitesse max : 6/10</p>
-                            <p>Accélération : 6/10</p>
-                            <p>Frein : 10/10</p>
-                            <p>Suspension : 5/10</p>
-                        </div>
-                    </div>
+            <div class="box-container" id="occasions-container">
                 </div>
-                <div class="box">
-                    <img src="https://i.postimg.cc/Gh26MLH2/cross1.png" alt="Moto Sport">
-                    <div class="box-details">
-                        <h2>Sanchez : 20 000$</h2>
-                        <h6>prix neuf : 25 000$</h6>
-                        <p>👤 2</p>
-                        <p>📦 0 Kilos</p>
-                        <div class="ratings">
-                            <p>Vitesse max : 5/10</p>
-                            <p>Accélération : 5/10</p>
-                            <p>Frein : 8/10</p>
-                            <p>Suspension : 5/10</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="https://i.postimg.cc/J4MztB6F/cross.png" alt="Moto Sport">
-                    <div class="box-details">
-                        <h2>Kunoichi : 44 000$</h2>
-                        <h6>prix neuf : 51 000$</h6>
-                        <p>👤 2</p>
-                        <p>📦 0 Kilos</p>
-                        <div class="ratings">
-                            <p>Vitesse max : 6/10</p>
-                            <p>Accélération : 6/10</p>
-                            <p>Frein : 10/10</p>
-                            <p>Suspension : 5/10</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="https://i.postimg.cc/sgf4rckD/cylindre19.png" alt="Moto Sport">
-                    <div class="box-details">
-                        <h2>Cliffhanger : 70 000$</h2>
-                        <h6>prix neuf : 78 272$</h6>
-                        <p>👤 2</p>
-                        <p>📦 0 Kilos</p>
-                        <div class="ratings">
-                            <p>Vitesse max : 6/10</p>
-                            <p>Accélération : 6/10</p>
-                            <p>Frein : 10/10</p>
-                            <p>Suspension : 6/10</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="box">
-                    <img src="https://i.postimg.cc/k5NVgVkM/sport26.png" alt="Moto Sport">
-                    <div class="box-details">
-                        <h2>Carbon RS : 105 000$</h2>
-                        <h6>prix neuf : 120 444$</h6>
-                        <p>👤 2</p>
-                        <p>📦 0 Kilos</p>
-                        <div class="ratings">
-                            <p>Vitesse max : 6/10</p>
-                            <p>Accélération : 7/10</p>
-                            <p>Frein : 10/10</p>
-                            <p>Suspension : 5/10</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
     </main>
+
     <script>
         function toggleMenu() {
             const nav = document.querySelector('.mobile-nav');
             nav.classList.toggle('show');
         }
+
+        const GOOGLE_SHEETS_API_URL = 'https://script.google.com/macros/s/AKfycbxgIBtD_C8AGNw5Mgatn7LUN28w-Izew41IxU4NG3uLphgA-6LDhP4bJVfIxS3pas1FDw/exec';
+        const CACHE_KEY = 'motosOccasionCache';
+        const CACHE_DURATION = 20 * 60 * 1000; // 20 minutes
+
+        function createMotorcycleCard(moto) {
+            const box = document.createElement('div');
+            box.classList.add('box');
+
+            box.innerHTML = `
+                <img src="${moto.image}" alt="${moto.nom}">
+                <div class="box-details">
+                    <h2>${moto.nom} : ${moto.prixOccasion}</h2>
+                    <h6>prix neuf : ${moto.prixNeuf}</h6>
+                    <p>👤 ${moto.passagers}</p>
+                    <div class="ratings">
+                        <p>Vitesse max : ${moto.vitesseMax}/10</p>
+                        <p>Accélération : ${moto.acceleration}/10</p>
+                        <p>Frein : ${moto.freinage}/10</p>
+                        <p>Suspension : ${moto.suspension}/10</p>
+                    </div>
+                </div>
+            `;
+            return box;
+        }
+
+        async function loadOccasions(forceRefresh = false) {
+            const occasionsContainer = document.getElementById('occasions-container');
+            if (!occasionsContainer) {
+                console.error("Erreur : L'élément avec l'ID 'occasions-container' n'a pas été trouvé dans le DOM.");
+                return;
+            }
+
+            // Affiche un message de chargement pendant la récupération des données
+            occasionsContainer.innerHTML = '<p style="text-align: center; margin-top: 50px; font-weight: bold;">Chargement des motos...</p>';
+
+            let motosOccasion = null;
+            const cachedData = localStorage.getItem(CACHE_KEY);
+
+            // 1. Essayer de charger depuis le cache local, SAUF si forceRefresh est vrai
+            if (cachedData && !forceRefresh) {
+                try {
+                    const { data, timestamp } = JSON.parse(cachedData);
+                    // Vérifie si le cache n'a pas expiré
+                    if (Date.now() - timestamp < CACHE_DURATION) {
+                        motosOccasion = data;
+                        console.log("Motos chargées depuis le cache local (rapide).");
+                    } else {
+                        console.log("Cache expiré, chargement depuis Google Sheets...");
+                    }
+                } catch (e) {
+                    console.warn("Erreur de parsing du cache local, chargement depuis Google Sheets.", e);
+                    localStorage.removeItem(CACHE_KEY); // Supprime le cache corrompu
+                }
+            }
+
+            // 2. Si pas de données en cache valides OU si forceRefresh est vrai, charger depuis Google Sheets
+            if (!motosOccasion) { // Si motosOccasion est toujours null, il faut aller chercher les données
+                try {
+                    const response = await fetch(GOOGLE_SHEETS_API_URL);
+                    if (!response.ok) {
+                        throw new Error(`Erreur HTTP: ${response.status}`);
+                    }
+                    motosOccasion = await response.json(); // Récupère les données JSON
+
+                    // Met à jour le cache local
+                    localStorage.setItem(CACHE_KEY, JSON.stringify({ data: motosOccasion, timestamp: Date.now() }));
+                    console.log("Motos chargées depuis Google Sheets et mises en cache.");
+
+                } catch (error) {
+                    console.error("Erreur lors du chargement des occasions depuis Google Sheets :", error);
+                    occasionsContainer.innerHTML = '<p style="color: red; margin-top: 50px; text-align: center;">Désolé, impossible de charger les motos pour le moment. Veuillez réessayer plus tard.</p>';
+                    return; // Arrête l'exécution si erreur
+                }
+            }
+
+            // Vide le message de chargement avant d'afficher les cartes
+            occasionsContainer.innerHTML = ''; 
+
+            // 3. Afficher les motos (qu'elles viennent du cache ou de Google Sheets)
+            if (Array.isArray(motosOccasion) && motosOccasion.length > 0) {
+                motosOccasion.forEach(moto => {
+                    const card = createMotorcycleCard(moto);
+                    occasionsContainer.appendChild(card);
+                });
+            } else {
+                occasionsContainer.innerHTML = '<p style="color: grey; margin-top: 50px; text-align: center;">Aucune moto d\'occasion disponible pour le moment.</p>';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Charge les occasions une première fois au chargement de la page (peut utiliser le cache)
+            loadOccasions(); 
+            
+            // Configure le rechargement automatique toutes les 20 minutes (force le rafraîchissement)
+            setInterval(() => {
+                console.log("Rafraîchissement automatique des données d'occasions...");
+                loadOccasions(true); // Force le rechargement depuis Google Sheets
+            }, CACHE_DURATION); 
+
+            // Écouteur d'événement pour le bouton d'actualisation (visible sur PC)
+            const refreshButton = document.getElementById('refreshOccasionsButton');
+            if (refreshButton) {
+                refreshButton.addEventListener('click', () => {
+                    console.log("Actualisation manuelle déclenchée par l'utilisateur.");
+                    loadOccasions(true); // Force le rechargement depuis Google Sheets
+                });
+            }
+        });
     </script>
 </body>
 </html>
